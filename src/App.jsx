@@ -82,7 +82,7 @@ const Ornament = ({ light = false }) => (
 );
 
 const SectionLabel = ({ children, light = false }) => (
-  <p className={`font-crimson text-xs tracking-widest uppercase mb-4 text-center ${light ? "text-yellow-400" : "text-yellow-700"}`}
+  <p className={`font-crimson text-xs tracking-widest uppercase mb-4 text-center ${light ? "text-yellow-700" : "text-yellow-700"}`}
     style={{ fontFamily: "var(--crimson)", letterSpacing: "0.35em" }}>
     {children}
   </p>
@@ -192,10 +192,10 @@ export default function App() {
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="md:hidden bg-green-950 border-t border-yellow-900 px-6 py-5 flex flex-col gap-4">
+          <div className="md:hidden bg-[#f0e5cc] border-t border-yellow-900 px-6 py-5 flex flex-col gap-4">
             {[["home", "Home"], ["about", "About"], ["booking", "Online Booking"], ["contact", "Contact"]].map(([p, label]) => (
               <button key={p} onClick={() => go(p)}
-                className="font-crimson text-sm tracking-widest uppercase text-left text-amber-100 hover:text-yellow-300 bg-transparent border-none cursor-pointer py-1"
+                className="font-crimson text-black text-sm tracking-widest uppercase text-left text-amber-100 hover:text-yellow-300 bg-transparent border-none cursor-pointer py-1"
                 style={{ fontFamily: "var(--crimson)", letterSpacing: "0.2em" }}>
                 {label}
               </button>
@@ -233,11 +233,11 @@ export default function App() {
               </div>
 
               {/* Title */}
-              <div className="flex items-center justify-between w-full">
+              <div className="flex flex-col md:flex-row items-center justify-center w-full text-center mx-auto">
 
-                <div className="rounded-[50%] bg-[#e8b96a] overflow-hidden">
-                  <img className="rounded-xl object-cover" src="src/assets/immu.png" width="300" alt="" />
-                </div>
+                {/* <div className="rounded-[50%] bg-[#e8b96a] overflow-hidden flex items-center justify-center border-[12px] border-[#e8b96a]">
+                  <img className="rounded-xl object-cover object-center w-60 md:30" src="src/assets/immu.png" alt="" />
+                </div> */}
 
                 <div>
                   <h1 className="font-playfair leading-tight mb-5 flex-1" style={{ fontFamily: "var(--playfair)", fontSize: "60px", color: "#faf4e8", fontWeight: 400 }}>
@@ -251,7 +251,7 @@ export default function App() {
               </div>
 
               <p className="pt-10 font-cormorant font-light italic mb-10 max-w-lg leading-relaxed" style={{ fontFamily: "var(--cormorant)", fontSize: "clamp(17px,2.2vw,22px)", color: "#a8c5a0" }}>
-                Five generations of hereditary wisdom. Lakhs of lives healed. Traditional bone care rooted in the purest Ayurvedic knowledge.
+                Three generations of hereditary wisdom. Lakhs of lives healed. Traditional bone care rooted in the purest Ayurvedic knowledge.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-14">
@@ -268,14 +268,6 @@ export default function App() {
               </div>
 
               {/* Stats */}
-              <div className="flex flex-wrap gap-10 pt-10 border-t" style={{ borderColor: "rgba(200,150,62,0.2)" }}>
-                {[["~95", "Years of Service"], ["Lakhs", "Patients Treated"], ["5+", "Generations"], ["100%", "Herbal & Natural"]].map(([n, l]) => (
-                  <div key={l}>
-                    <div className="font-playfair font-bold" style={{ fontFamily: "var(--playfair)", fontSize: 38, color: "#c8963e", lineHeight: 1 }}>{n}</div>
-                    <div className="font-crimson text-xs uppercase tracking-widest mt-1" style={{ fontFamily: "var(--crimson)", color: "#a8c5a0", letterSpacing: "0.2em" }}>{l}</div>
-                  </div>
-                ))}
-              </div>
             </div>
 
             {/* Scroll hint */}
@@ -286,7 +278,7 @@ export default function App() {
           </section>
 
           {/* Services */}
-          <section className="py-20 px-6 md:px-10" style={{ background: "#1a3020" }}>
+          <section className="py-20 px-6 md:px-10" style={{ background: "#f0e5cc" }}>
             <div className="max-w-6xl mx-auto">
               <Ornament light />
               <SectionLabel light>Our Specialisations</SectionLabel>
@@ -296,8 +288,8 @@ export default function App() {
                     className="service-card relative p-8 border cursor-default fade-in"
                     style={{ borderColor: "rgba(200,150,62,0.1)", background: "rgba(255,255,255,0.02)", transitionDelay: `${i * 80}ms` }}>
                     <div className="text-3xl mb-4">{s.icon}</div>
-                    <div className="font-playfair text-base font-semibold mb-2" style={{ fontFamily: "var(--playfair)", color: "#e8b96a" }}>{s.name}</div>
-                    <div className="font-crimson text-sm leading-relaxed font-light" style={{ fontFamily: "var(--crimson)", color: "#a8c5a0" }}>{s.desc}</div>
+                    <div className="font-playfair text-base font-semibold mb-2" style={{ fontFamily: "var(--playfair)", color: "#b08b4c" }}>{s.name}</div>
+                    <div className="font-crimson text-sm leading-relaxed font-light" style={{ fontFamily: "var(--crimson)", color: "#1a3020" }}>{s.desc}</div>
                   </div>
                 ))}
               </div>
@@ -305,10 +297,10 @@ export default function App() {
           </section>
 
           {/* About teaser */}
-          <section className="py-24 px-6 md:px-10 bg-green-950" style={{ background: "#ffffff" }}>
-            <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* <section className="py-24 px-6 md:px-10 bg-green-950" style={{ background: "#ffffff" }}>
+            <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"> */}
               {/* Visual */}
-              <div className="relative fade-in">
+              {/* <div className="relative fade-in">
                 <div className="relative rounded-sm overflow-hidden flex flex-col items-center justify-center py-20"
                   style={{ background: "linear-gradient(145deg,#1a3020,#2d5040)", minHeight: 420 }}>
                   <div className="absolute inset-4 border rounded-sm pointer-events-none" style={{ borderColor: "rgba(200,150,62,0.25)" }} />
@@ -316,19 +308,19 @@ export default function App() {
                   <p className="font-playfair italic text-center px-8 text-base" style={{ fontFamily: "var(--playfair)", color: "#e8b96a" }}>
                     "Where ancient wisdom meets modern healing"
                   </p>
-                </div>
+                </div> */}
                 {/* corner accents */}
-                <div className="absolute -top-4 -right-4 w-24 h-24 border-2 rounded-sm opacity-25" style={{ borderColor: "#c8963e" }} />
-                <div className="absolute -bottom-4 -left-4 w-16 h-16 border-2 rounded-sm opacity-20" style={{ borderColor: "#c8963e" }} />
+                {/* <div className="absolute -top-4 -right-4 w-24 h-24 border-2 rounded-sm opacity-25" style={{ borderColor: "#c8963e" }} />
+                <div className="absolute -bottom-4 -left-4 w-16 h-16 border-2 rounded-sm opacity-20" style={{ borderColor: "#c8963e" }} /> */}
                 {/* year badge */}
-                <div className="absolute -bottom-6 right-6 px-6 py-4 text-center" style={{ background: "#c8963e" }}>
+                {/* <div className="absolute -bottom-6 right-6 px-6 py-4 text-center" style={{ background: "#c8963e" }}>
                   <span className="block font-playfair font-black text-3xl leading-none" style={{ fontFamily: "var(--playfair)", color: "#1a3020" }}>1930</span>
                   <span className="font-crimson text-xs font-semibold uppercase tracking-wider" style={{ fontFamily: "var(--crimson)", color: "#1a3020" }}>Est.</span>
                 </div>
-              </div>
+              </div> */}
 
               {/* Text */}
-              <div className="fade-in pt-8" style={{ transitionDelay: "150ms" }}>
+              {/* <div className="fade-in pt-8" style={{ transitionDelay: "150ms" }}>
                 <p className="font-crimson text-xs uppercase tracking-widest mb-4" style={{ fontFamily: "var(--crimson)", color: "#c8963e", letterSpacing: "0.3em" }}>Our Legacy</p>
                 <h2 className="font-playfair mb-6 leading-snug" style={{ fontFamily: "var(--playfair)", fontSize: "clamp(28px,3.5vw,46px)", color: "#1a3020", fontWeight: 400 }}>
                   A Heritage of <em style={{ color: "#8b3a20" }}>Healing</em> Passed Through Generations
@@ -358,16 +350,16 @@ export default function App() {
                 </button>
               </div>
             </div>
-          </section>
+          </section> */}
 
           {/* Oil feature */}
-          <section className="py-24 px-6 md:px-10 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#2d5040,#1a3020)" }}>
+          {/* <section className="py-24 px-6 md:px-10 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#2d5040,#1a3020)" }}>
             <div className="absolute inset-0 opacity-40 pointer-events-none"
               style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c8963e' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E")` }} />
             <div className="max-w-6xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-              <div className="fade-in">
+              <div className="fade-in"> */}
                 {/* badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-5" style={{ borderColor: "rgba(200,150,62,0.35)", background: "rgba(200,150,62,0.1)" }}>
+                {/* <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-5" style={{ borderColor: "rgba(200,150,62,0.35)", background: "rgba(200,150,62,0.1)" }}>
                   <span className="badge-pulse w-1.5 h-1.5 rounded-full" style={{ background: "#c8963e" }} />
                   <span className="font-crimson text-xs uppercase tracking-widest" style={{ fontFamily: "var(--crimson)", color: "#e8b96a", letterSpacing: "0.25em" }}>Original Creators</span>
                 </div>
@@ -376,19 +368,19 @@ export default function App() {
                 </h2>
                 <p className="font-cormorant text-lg font-light leading-relaxed mb-8" style={{ fontFamily: "var(--cormorant)", color: "#a8c5a0" }}>
                   Crafted exclusively from authentic natural herbs, this proprietary oil has been our family's closely guarded formulation for decades. Prepared using traditional cold-process methods, it is the only pain relief oil in the region with verifiable non-carcinogenic properties.
-                </p>
-                <ul className="flex flex-col gap-3">
+                </p> */}
+                {/* <ul className="flex flex-col gap-3">
                   {["Prepared from 100% authentic natural herbs", "Non-carcinogenic, safe for long-term use", "Effective deep-tissue pain relief", "Original formulation by Immu Sab", "Available exclusively at our center"].map(p => (
                     <li key={p} className="flex items-center gap-4 font-cormorant text-base" style={{ fontFamily: "var(--cormorant)", color: "#f0e5cc" }}>
                       <span className="h-px w-6 flex-shrink-0" style={{ background: "#c8963e" }} />
                       {p}
                     </li>
                   ))}
-                </ul>
-              </div>
+                </ul> */}
+              {/* </div> */}
 
               {/* Circle visual */}
-              <div className="flex items-center justify-center fade-in" style={{ transitionDelay: "200ms" }}>
+              {/* <div className="flex items-center justify-center fade-in" style={{ transitionDelay: "200ms" }}>
                 <div className="relative w-72 h-72 md:w-80 md:h-80">
                   <div className="absolute inset-0 rounded-full border" style={{ borderColor: "rgba(200,150,62,0.25)" }} />
                   <div className="absolute inset-5 rounded-full border border-dashed" style={{ borderColor: "rgba(200,150,62,0.15)" }} />
@@ -402,7 +394,7 @@ export default function App() {
                 </div>
               </div>
             </div>
-          </section>
+          </section> */}
 
           {/* Testimonials */}
           <section className="py-24 px-6 md:px-10" style={{ background: "#fffdf7" }}>
@@ -445,9 +437,9 @@ export default function App() {
               <h2 className="font-playfair font-normal leading-snug my-5" style={{ fontFamily: "var(--playfair)", fontSize: "clamp(28px,4vw,46px)", color: "#faf4e8" }}>
                 Begin Your Healing <em style={{ color: "#e8b96a" }}>Journey</em>
               </h2>
-              <p className="font-cormorant font-light text-lg leading-relaxed mb-9" style={{ fontFamily: "var(--cormorant)", color: "#a8c5a0" }}>
+              {/* <p className="font-cormorant font-light text-lg leading-relaxed mb-9" style={{ fontFamily: "var(--cormorant)", color: "#a8c5a0" }}>
                 Trust in five generations of Ayurvedic wisdom. Your path to natural recovery starts with a single consultation.
-              </p>
+              </p> */}
               <div className="flex flex-wrap gap-4 justify-center">
                 <button onClick={() => go("booking")}
                   className="btn-angled font-crimson text-xs tracking-widest uppercase font-semibold px-8 py-4 border-none cursor-pointer transition-all hover:-translate-y-0.5"
@@ -475,18 +467,18 @@ export default function App() {
             <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 60% 50%, rgba(200,150,62,0.08) 0%, transparent 70%)" }} />
             <div className="max-w-3xl mx-auto relative z-10">
               <SectionLabel light>Our Story</SectionLabel>
-              <h1 className="font-playfair font-normal leading-snug mb-4" style={{ fontFamily: "var(--playfair)", fontSize: "clamp(34px,5vw,66px)", color: "#faf4e8" }}>
+              {/* <h1 className="font-playfair font-normal leading-snug mb-4" style={{ fontFamily: "var(--playfair)", fontSize: "clamp(34px,5vw,66px)", color: "#faf4e8" }}>
                 A Century of <em style={{ color: "#e8b96a" }}>Ayurvedic Heritage</em>
-              </h1>
+              </h1> */}
               <Ornament light />
               <p className="font-cormorant font-light text-xl leading-relaxed mt-5" style={{ fontFamily: "var(--cormorant)", color: "#a8c5a0" }}>
-                Rooted in Belupalle, nurtured by generations, and built on the unwavering trust of lakhs of patients across Andhra Pradesh and beyond.
+                Rooted in Belupalle, nurtured by generations, and built on the unwavering trust of lakhs of healers across Andhra Pradesh and beyond.
               </p>
             </div>
           </section>
 
           {/* Founder */}
-          <section className="py-24 px-6 md:px-10" style={{ background: "#f0e5cc" }}>
+          {/* <section className="py-24 px-6 md:px-10" style={{ background: "#f0e5cc" }}>
             <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="relative fade-in">
                 <div className="relative flex flex-col items-center justify-center py-20 rounded-sm" style={{ background: "linear-gradient(145deg,#1a3020,#2d5040)", minHeight: 420 }}>
@@ -519,10 +511,10 @@ export default function App() {
                 </p>
               </div>
             </div>
-          </section>
+          </section> */}
 
           {/* Timeline */}
-          <section className="py-24 px-6 md:px-10" style={{ background: "#1a3020" }}>
+          {/* <section className="py-24 px-6 md:px-10" style={{ background: "#1a3020" }}>
             <div className="max-w-6xl mx-auto">
               <SectionLabel light>Our Journey</SectionLabel>
               <h2 className="font-playfair font-normal text-center mb-2 leading-snug" style={{ fontFamily: "var(--playfair)", fontSize: "clamp(28px,4vw,48px)", color: "#faf4e8" }}>
@@ -539,9 +531,9 @@ export default function App() {
                       <div className="font-playfair font-bold text-2xl" style={{ fontFamily: "var(--playfair)", color: "#c8963e" }}>{item.year}</div>
                       <div className="font-playfair text-lg mb-2" style={{ fontFamily: "var(--playfair)", color: "#faf4e8" }}>{item.title}</div>
                       <div className="font-cormorant font-light text-base leading-relaxed" style={{ fontFamily: "var(--cormorant)", color: "#a8c5a0" }}>{item.desc}</div>
-                    </div>
+                    </div> */}
                     {/* dot */}
-                    <div className="w-3 h-3 rounded-full flex-shrink-0 mt-2 relative z-10 border-4" style={{ background: "#c8963e", borderColor: "#1a3020" }} />
+                    {/* <div className="w-3 h-3 rounded-full flex-shrink-0 mt-2 relative z-10 border-4" style={{ background: "#c8963e", borderColor: "#1a3020" }} />
                     <div className="flex-1 sm:hidden">
                       <div className="font-playfair font-bold text-xl" style={{ fontFamily: "var(--playfair)", color: "#c8963e" }}>{item.year}</div>
                       <div className="font-playfair text-base mb-1" style={{ fontFamily: "var(--playfair)", color: "#faf4e8" }}>{item.title}</div>
@@ -552,7 +544,7 @@ export default function App() {
                 ))}
               </div>
             </div>
-          </section>
+          </section> */}
 
           {/* Warning */}
           <section className="py-16 px-6 md:px-10" style={{ background: "#f0e5cc" }}>
@@ -597,13 +589,13 @@ export default function App() {
               {/* Info */}
               <div className="lg:col-span-2 fade-in">
                 <h2 className="font-playfair font-normal leading-snug mb-5" style={{ fontFamily: "var(--playfair)", fontSize: "clamp(24px,2.8vw,36px)", color: "#1a3020" }}>
-                  Begin Your Path to <em style={{ color: "#8b3a20" }}>Natural Healing</em>
+                  Online <em style={{ color: "#8b3a20" }}>Appointment Form</em>
                 </h2>
-                <p className="font-cormorant text-lg font-light leading-relaxed mb-8" style={{ fontFamily: "var(--cormorant)", color: "#3d2f18" }}>
+                {/* <p className="font-cormorant text-lg font-light leading-relaxed mb-8" style={{ fontFamily: "var(--cormorant)", color: "#3d2f18" }}>
                   We welcome patients from all over Andhra Pradesh and beyond. Whether you seek relief from a long-standing injury or acute condition, our traditional methods offer lasting recovery.
-                </p>
+                </p> */}
                 <div className="flex flex-col gap-5 mb-8">
-                  {[["1", "Fill the form with your details and concern"], ["2", "We will call you to confirm your appointment"], ["3", "Visit us at the center on your scheduled date"], ["4", "Begin your healing journey with our specialists"]].map(([n, t]) => (
+                  {[["1", "Make a call to us.(@ +91- 77025 11025"], ["2", "We will confirm your appointment"], ["3", "Visit us at the center on your scheduled date"]].map(([n, t]) => (
                     <div key={n} className="flex gap-4 items-start">
                       <div className="w-9 h-9 flex-shrink-0 flex items-center justify-center border font-playfair text-sm" style={{ borderColor: "#c8963e", color: "#c8963e", fontFamily: "var(--playfair)" }}>{n}</div>
                       <p className="font-cormorant text-base leading-relaxed pt-1.5" style={{ fontFamily: "var(--cormorant)", color: "#3d2f18" }}>{t}</p>
@@ -611,21 +603,21 @@ export default function App() {
                   ))}
                 </div>
                 <div className="p-5 border rounded-sm" style={{ borderColor: "rgba(200,150,62,0.3)", background: "rgba(200,150,62,0.06)" }}>
-                  <p className="font-playfair text-base mb-2" style={{ fontFamily: "var(--playfair)", color: "#1a3020" }}>📞 Prefer to call?</p>
+                  <p className="font-playfair text-base mb-2" style={{ fontFamily: "var(--playfair)", color: "#1a3020" }}>📞 Call to Book Appointment</p>
                   <p className="font-cormorant text-base font-light leading-relaxed" style={{ fontFamily: "var(--cormorant)", color: "#3d2f18" }}>
-                    Contact us directly and we will assist you personally. Always confirm the official name before visiting.
+                    Contact us<em style={{ color: "#8b3a20" }}>@ +91-77025 11025</em> to book appointment directly. Always confirm the official name before visiting.
                   </p>
                 </div>
               </div>
 
               {/* Form */}
               <div className="lg:col-span-3 fade-in p-8 md:p-10 border shadow-xl" style={{ transitionDelay: "150ms", background: "#fffdf7", borderColor: "#e0d0b0" }}>
-                <h3 className="font-playfair font-semibold text-2xl mb-7" style={{ fontFamily: "var(--playfair)", color: "#1a3020" }}>Patient Appointment Form</h3>
+                <h3 className="font-playfair font-semibold text-2xl mb-7" style={{ fontFamily: "var(--playfair)", color: "#1a3020" }}>Patient Appointment Form <span className="text-xs text-maroon-400"> (Not required if called already)</span></h3>
                 {bookingDone ? (
                   <div className="text-center py-10 border rounded-sm" style={{ borderColor: "#3d6b54", background: "rgba(61,107,84,0.08)" }}>
                     <div className="text-5xl mb-4">✅</div>
                     <p className="font-cormorant italic text-xl" style={{ fontFamily: "var(--cormorant)", color: "#1a3020" }}>
-                      Thank you. Your booking request has been received. We will contact you shortly to confirm your appointment.
+                      Thank you. Your booking request has been received. Please call us @ 77025 11025 to confirm appointment.
                     </p>
                     <button onClick={() => setBookingDone(false)}
                       className="btn-angled mt-6 font-crimson text-xs uppercase tracking-widest px-7 py-3 border-none cursor-pointer"
@@ -714,7 +706,7 @@ export default function App() {
 
                 {[
                   ["📍", "Address", "Immu Sab Ayurvedic Generational Bone Setting and Ayurvedic Center\nBelupalle, Andhra Pradesh, India"],
-                  ["📞", "Phone", "Please contact us to receive our current number"],
+                  ["📞", "Phone", "77025 11025"],
                   ["⚠️", "Authenticity Reminder", "Always confirm you are visiting the official centre — beware of impostors using similar names."]
                 ].map(([icon, label, val]) => (
                   <div key={label} className="flex gap-4 mb-7">
@@ -728,7 +720,7 @@ export default function App() {
 
                 <div className="pt-6 border-t" style={{ borderColor: "rgba(200,150,62,0.2)" }}>
                   <p className="font-playfair text-lg mb-4" style={{ fontFamily: "var(--playfair)", color: "#e8b96a" }}>Consultation Hours</p>
-                  {[["Monday – Friday", "9:00 AM – 6:00 PM"], ["Saturday", "9:00 AM – 4:00 PM"], ["Sunday", "10:00 AM – 2:00 PM"], ["Public Holidays", "By appointment only"]].map(([d, t]) => (
+                  {[["Monday – Sunday", "8:00 AM – 6:00 PM"]].map(([d, t]) => (
                     <div key={d} className="flex justify-between py-2 border-b font-cormorant text-base" style={{ fontFamily: "var(--cormorant)", borderColor: "rgba(200,150,62,0.1)", color: "#a8c5a0" }}>
                       <span>{d}</span>
                       <span style={{ color: "#f0e5cc" }}>{t}</span>
@@ -788,11 +780,11 @@ export default function App() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pb-10 border-b" style={{ borderColor: "rgba(200,150,62,0.12)" }}>
             <div className="md:col-span-1">
-              <div className="font-playfair font-bold text-lg mb-1" style={{ fontFamily: "var(--playfair)", color: "#e8b96a" }}>Immu Sab Ayurvedic Center</div>
+              <div className="font-playfair font-bold text-lg mb-1" style={{ fontFamily: "var(--playfair)", color: "#e8b96a" }}>Immu Sab Ayurvedic </div>
               <div className="font-crimson text-xs uppercase tracking-widest mb-4" style={{ fontFamily: "var(--crimson)", color: "#6b8f6b", letterSpacing: "0.2em" }}>Belupalle · Established ~1930</div>
-              <p className="font-cormorant text-base font-light leading-relaxed" style={{ fontFamily: "var(--cormorant)", color: "rgba(200,183,151,0.55)" }}>
+              {/* <p className="font-cormorant text-base font-light leading-relaxed" style={{ fontFamily: "var(--cormorant)", color: "rgba(200,183,151,0.55)" }}>
                 A hereditary legacy of Ayurvedic bone setting and holistic healing, serving lakhs of patients with authentic natural methods across five generations.
-              </p>
+              </p> */}
             </div>
             <div>
               <div className="font-playfair text-base font-semibold mb-4" style={{ fontFamily: "var(--playfair)", color: "#e8b96a" }}>Navigation</div>
@@ -812,7 +804,7 @@ export default function App() {
             </div>
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center gap-2 pt-6 font-crimson text-xs" style={{ fontFamily: "var(--crimson)", color: "rgba(200,183,151,0.3)", letterSpacing: "0.1em" }}>
-            <span>© 2024 Immu Sab Ayurvedic Generational Bone Setting and Ayurvedic Center. All rights reserved.</span>
+            <span>© 2026 Immu Sab Ayurvedic Generational Bone Setting and Ayurvedic Center. All rights reserved.</span>
             <span>Belupalle, Andhra Pradesh · Est. ~1930</span>
           </div>
         </div>
