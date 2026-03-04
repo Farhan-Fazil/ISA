@@ -222,6 +222,7 @@ export default function App() {
 
             {/* botanical */}
             <div className="absolute bottom-0 right-16 text-green-600 opacity-10 pointer-events-none select-none hidden lg:block" style={{ fontSize: 280, lineHeight: 1 }}>🌿</div>
+            <div className="absolute bottom-0 left-40 text-green-600 opacity-10 pointer-events-none select-none hidden lg:block" style={{ fontSize: 280, lineHeight: 1 }}>🌿</div>
 
             <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-10 pt-28 pb-24 w-full">
               {/* Est badge */}
@@ -250,11 +251,11 @@ export default function App() {
 
               </div>
 
-              <p className="pt-10 font-cormorant font-light italic mb-10 max-w-lg leading-relaxed" style={{ fontFamily: "var(--cormorant)", fontSize: "clamp(17px,2.2vw,22px)", color: "#a8c5a0" }}>
-                Three generations of hereditary wisdom. Lakhs of lives healed. Traditional bone care rooted in the purest Ayurvedic knowledge.
+              <p className="pt-10 font-cormorant font-light italic mb-10 max-w-lg leading-relaxed md:ml-[30%]" style={{ fontFamily: "var(--cormorant)", fontSize: "clamp(17px,2.2vw,22px)", color: "#a8c5a0" }}>
+                Three generations of hereditary wisdom. Lakhs of lives healed. Traditional bone care rooted in Belupalle, Andhra Pradesh.
               </p>
 
-              <div className="flex flex-wrap gap-4 mb-14">
+              <div className="flex flex-wrap gap-4 mb-14 md:ml-[30%]">
                 <button onClick={() => go("booking")}
                   className="btn-angled font-crimson text-xs tracking-widest uppercase font-semibold px-9 py-4 border-none cursor-pointer transition-all duration-200 hover:-translate-y-0.5"
                   style={{ fontFamily: "var(--crimson)", letterSpacing: "0.2em", background: "#c8963e", color: "#1a3020" }}>
@@ -595,17 +596,17 @@ export default function App() {
                   We welcome patients from all over Andhra Pradesh and beyond. Whether you seek relief from a long-standing injury or acute condition, our traditional methods offer lasting recovery.
                 </p> */}
                 <div className="flex flex-col gap-5 mb-8">
-                  {[["1", "Make a call to us.(@ +91- 77025 11025"], ["2", "We will confirm your appointment"], ["3", "Visit us at the center on your scheduled date"]].map(([n, t]) => (
+                  {[["1", "Make a call to us. @ +91- 77025 11025"], ["2", "We will confirm your appointment"], ["3", "Visit us at the center on your scheduled date"]].map(([n, t]) => (
                     <div key={n} className="flex gap-4 items-start">
-                      <div className="w-9 h-9 flex-shrink-0 flex items-center justify-center border font-playfair text-sm" style={{ borderColor: "#c8963e", color: "#c8963e", fontFamily: "var(--playfair)" }}>{n}</div>
-                      <p className="font-cormorant text-base leading-relaxed pt-1.5" style={{ fontFamily: "var(--cormorant)", color: "#3d2f18" }}>{t}</p>
+                      <div className="w-9 h-9 flex-shrink-0 flex items-center justify-center border font-playfair text-sm" style={{ borderColor: "#c8963e", color: "#c8963e", fontFamily: "-apple-system" }}>{n}</div>
+                      <p className="font-cormorant text-base leading-relaxed pt-1.5" style={{ fontFamily: "-apple-system", color: "#3d2f18" }}>{t}</p>
                     </div>
                   ))}
                 </div>
                 <div className="p-5 border rounded-sm" style={{ borderColor: "rgba(200,150,62,0.3)", background: "rgba(200,150,62,0.06)" }}>
                   <p className="font-playfair text-base mb-2" style={{ fontFamily: "var(--playfair)", color: "#1a3020" }}>📞 Call to Book Appointment</p>
-                  <p className="font-cormorant text-base font-light leading-relaxed" style={{ fontFamily: "var(--cormorant)", color: "#3d2f18" }}>
-                    Contact us<em style={{ color: "#8b3a20" }}>@ +91-77025 11025</em> to book appointment directly. Always confirm the official name before visiting.
+                  <p className="font-cormorant text-base font-light leading-relaxed" style={{ fontFamily: "-apple-system", color: "#3d2f18" }}>
+                    Contact us <em style={{ color: "#8b3a20" }}>@ +91-77025 11025</em> to book appointment directly. Always confirm the official name before visiting.
                   </p>
                 </div>
               </div>
@@ -713,7 +714,7 @@ export default function App() {
                     <div className="w-11 h-11 flex-shrink-0 flex items-center justify-center border text-lg" style={{ borderColor: "rgba(200,150,62,0.3)", color: "#c8963e" }}>{icon}</div>
                     <div>
                       <p className="font-crimson text-xs uppercase tracking-widest mb-1" style={{ fontFamily: "var(--crimson)", color: "#a8c5a0", letterSpacing: "0.2em" }}>{label}</p>
-                      <p className="font-cormorant text-base leading-relaxed" style={{ fontFamily: "var(--cormorant)", color: label === "Authenticity Reminder" ? "rgba(248,180,130,0.9)" : "#faf4e8", whiteSpace: "pre-line" }}>{val}</p>
+                      <p className="font-cormorant text-base leading-relaxed" style={{ fontFamily: "-apple-system", color: label === "Authenticity Reminder" ? "rgba(248,180,130,0.9)" : "#faf4e8", whiteSpace: "pre-line" }}>{val}</p>
                     </div>
                   </div>
                 ))}
