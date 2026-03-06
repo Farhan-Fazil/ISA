@@ -57,7 +57,7 @@ const SERVICES = [
 ];
 
 const TESTIMONIALS = [
-  { text: "After suffering from a complex fracture for months with no improvement elsewhere, Immu Sab's treatment healed me completely within weeks. Truly generational knowledge.", name: "Ravi Shankar", location: "Hyderabad", initials: "RS" },
+  { text: "After suffering from a complex fracture for months with no improvement elsewhere, Munna's treatment with his assistant Ramana healed me completely within weeks. Truly generational knowledge.", name: "Ravi Shankar", location: "Hyderabad", initials: "RS" },
   { text: "My father's knee dislocation was treated here, and he walks without any assistance today. The Belupalle Legacy Oil has been a blessing for our entire family.", name: "Fatima Begum", location: "Warangal", initials: "FB" },
   { text: "I have been coming here for back pain for years. There is no place like this — the authenticity and care are unmatched. A true heritage center.", name: "Venkata Rao", location: "Vijayawada", initials: "VR" },
 ];
@@ -279,7 +279,7 @@ export default function App() {
           </section>
 
           {/* Services */}
-          <section className="py-20 px-6 md:px-10" style={{ background: "#f0e5cc" }}>
+          {/* <section className="py-20 px-6 md:px-10" style={{ background: "#f0e5cc" }}>
             <div className="max-w-6xl mx-auto">
               <Ornament light />
               <SectionLabel light>Our Specialisations</SectionLabel>
@@ -295,7 +295,7 @@ export default function App() {
                 ))}
               </div>
             </div>
-          </section>
+          </section> */}
 
           {/* About teaser */}
           {/* <section className="py-24 px-6 md:px-10 bg-green-950" style={{ background: "#ffffff" }}>
