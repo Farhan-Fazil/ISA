@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import Scroller from "./components/Scroller";
 
 /* ── Google Fonts ─────────────────────────────────────── */
 const FontLink = () => (
@@ -57,9 +58,21 @@ const SERVICES = [
 ];
 
 const TESTIMONIALS = [
+  {
+  text: "I visited Munna Ayurvedic Center for my joint pain and the results were excellent. The treatment felt very authentic and effective. Special thanks to Ramana, the staff member, who took great care throughout the process.",
+  name: "Suresh Shetty",
+  location: "Bellary, KA",
+  initials: "SK"
+},
+{
+  text: "Had a great experience at Munna Ayurvedic Center. The treatment really helped reduce my back pain. Ramana and the team were very supportive and professional. Truly a place you can trust for traditional healing.",
+  name: "Lakshmi Devi",
+  location: "Coimbattore",
+  initials: "LD"
+},
   { text: "After suffering from a complex fracture for months with no improvement elsewhere, Munna's treatment with his assistant Ramana healed me completely within weeks. Truly generational knowledge.", name: "Ravi Shankar", location: "Hyderabad", initials: "RS" },
   { text: "My father's knee dislocation was treated here, and he walks without any assistance today. The Belupalle Legacy Oil has been a blessing for our entire family.", name: "Fatima Begum", location: "Warangal", initials: "FB" },
-  { text: "I have been coming here for back pain for years. There is no place like this — the authenticity and care are unmatched. A true heritage center.", name: "Venkata Rao", location: "Vijayawada", initials: "VR" },
+  { text: "I have been coming here for back pain for years. There is no place like this — the authenticity and care are unmatched. A true heritage center.", name: "Jamal Ray", location: "Kochi, Kerala", initials: "VR" },
 ];
 
 const TIMELINE = [
@@ -155,7 +168,7 @@ export default function App() {
           {/* Logo */}
           <div className="cursor-pointer flex flex-col leading-none" onClick={() => go("home")}>
             <span className="font-playfair text-base md:text-lg font-bold text-[#e8b96a] tracking-wide" style={{ fontFamily: "var(--playfair)" }}>
-              IMMU SAB
+              MUNNA 
             </span>
             <span className="font-crimson text-xs text-green-300 tracking-widest uppercase mt-0.5" style={{ fontFamily: "var(--crimson)", letterSpacing: "0.25em", fontSize: "9px" }}>
               Ayurvedic Heritage · Est. ~1930
@@ -204,6 +217,10 @@ export default function App() {
         )}
       </nav>
 
+      <div className="mt-10 fixed top-6 md:top-7 z-50">
+      <Scroller/>
+      </div>
+
       {/* ══════════════════════════════════════════════════
           HOME PAGE
       ══════════════════════════════════════════════════ */}
@@ -226,10 +243,13 @@ export default function App() {
 
             <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-10 pt-28 pb-24 w-full">
               {/* Est badge */}
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-6 mt-5">
                 <span className="h-px w-10 bg-yellow-600" />
                 <span className="font-crimson text-xs text-yellow-500 tracking-widest uppercase" style={{ fontFamily: "var(--crimson)", letterSpacing: "0.3em" }}>
                   Established circa 1930 · Belupalle · Andhra Pradesh
+                </span>
+                <span className="font-crimson text-xs text-yellow-500 tracking-widest uppercase" style={{ fontFamily: "var(--crimson)", letterSpacing: "0.3em" }}>
+                Real Ancestral Heritage
                 </span>
               </div>
 
@@ -240,11 +260,11 @@ export default function App() {
                   <img className="rounded-xl object-cover object-center w-60 md:30" src="src/assets/immu.png" alt="" />
                 </div> */}
 
-                <div>
-                  <h1 className="font-playfair leading-tight mb-5 flex-1" style={{ fontFamily: "var(--playfair)", fontSize: "60px", color: "#faf4e8", fontWeight: 400 }}>
-                    <em style={{ color: "#e8b96a", fontStyle: "italic" }}>Immu Sab</em>
-                    <span className="block font-bold" style={{ fontFamily: "var(--playfair)" }}>Ayurvedic Generational</span>
-                    Bone Setting Center
+                <div className="w-full">
+                  <h1 className="font-playfair leading-tight mb-5 flex-1 text-[50px] lg:text-[60px]" style={{ fontFamily: "var(--playfair)", color: "#faf4e8", fontWeight: 400 }}>
+                    <em style={{ color: "#e8b96a", fontStyle: "italic" }}>Munna Ayurvedic</em>
+                    <span className="block font-bold" style={{ fontFamily: "var(--playfair)" }}>Generational</span>
+                    <span>Bone Setting Center</span>
                   </h1>
                 </div>
 
@@ -554,11 +574,11 @@ export default function App() {
                 <div className="font-playfair text-xl mb-4 flex items-center gap-3" style={{ fontFamily: "var(--playfair)", color: "#8b3a20" }}>
                   ⚠️ Important Authenticity Notice
                 </div>
-                <p className="font-cormorant text-lg font-light leading-relaxed mb-4" style={{ fontFamily: "var(--cormorant)", color: "#3d2f18" }}>
-                  There may be non-authentic or counterfeit clinics operating in and around Belupalle using names similar to ours. For genuine, safe, and effective treatment, always verify you are at the correct location.
+                <p className="font-cormorant text-xl font-bold leading-relaxed mb-4" style={{ fontFamily: "var(--cormorant)", color: "#3d2f18" }}>
+                  There may be fake, non-authentic or counterfeit clinics operating in and around Belupalle using names similar to ours. For genuine, safe, and effective treatment, always verify you are at the correct location. This center represents true, authentic and real Heritage that is passed down from our founding forefathers. 
                 </p>
                 <p className="font-cormorant text-lg font-light leading-relaxed mb-4" style={{ fontFamily: "var(--cormorant)", color: "#3d2f18" }}>
-                  The official name of our institution is: <strong style={{ color: "#8b3a20" }}>"Immu Sab Ayurvedic Generational Bone Setting and Ayurvedic Center"</strong>
+                  The official name of our institution is: <br/> <strong className="text-[#8b3a20] font-bold text-xl ">"Munna Ayurvedic Generational Bone Setting and Ayurvedic Center"</strong>
                 </p>
                 <p className="font-crimson text-sm font-semibold uppercase tracking-wider" style={{ fontFamily: "var(--crimson)", color: "#8b3a20", letterSpacing: "0.15em" }}>
                   Always confirm by calling us before your visit.
@@ -706,7 +726,7 @@ export default function App() {
                 </h2>
 
                 {[
-                  ["📍", "Address", "Immu Sab Ayurvedic Generational Bone Setting and Ayurvedic Center\nBelupalle, Andhra Pradesh, India"],
+                  ["📍", "Address", "Munna Ayurvedic Generational Bone Setting Center\nBelupalle, Andhra Pradesh, India"],
                   ["📞", "Phone", "77025 11025"],
                   ["⚠️", "Authenticity Reminder", "Always confirm you are visiting the official centre — beware of impostors using similar names."]
                 ].map(([icon, label, val]) => (
@@ -781,7 +801,7 @@ export default function App() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pb-10 border-b" style={{ borderColor: "rgba(200,150,62,0.12)" }}>
             <div className="md:col-span-1">
-              <div className="font-playfair font-bold text-lg mb-1" style={{ fontFamily: "var(--playfair)", color: "#e8b96a" }}>Immu Sab Ayurvedic </div>
+              <div className="font-playfair font-bold text-lg mb-1" style={{ fontFamily: "var(--playfair)", color: "#e8b96a" }}>Munna Ayurvedic </div>
               <div className="font-crimson text-xs uppercase tracking-widest mb-4" style={{ fontFamily: "var(--crimson)", color: "#6b8f6b", letterSpacing: "0.2em" }}>Belupalle · Established ~1930</div>
               {/* <p className="font-cormorant text-base font-light leading-relaxed" style={{ fontFamily: "var(--cormorant)", color: "rgba(200,183,151,0.55)" }}>
                 A hereditary legacy of Ayurvedic bone setting and holistic healing, serving lakhs of patients with authentic natural methods across five generations.
@@ -805,7 +825,7 @@ export default function App() {
             </div>
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center gap-2 pt-6 font-crimson text-xs" style={{ fontFamily: "var(--crimson)", color: "rgba(200,183,151,0.3)", letterSpacing: "0.1em" }}>
-            <span>© 2026 Immu Sab Ayurvedic Generational Bone Setting and Ayurvedic Center. All rights reserved.</span>
+            <span>© 2026 Munna Ayurvedic Generational Bone Setting and Ayurvedic Center. All rights reserved.</span>
             <span>Belupalle, Andhra Pradesh · Est. ~1930</span>
           </div>
         </div>
